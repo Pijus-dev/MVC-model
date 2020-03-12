@@ -3,11 +3,11 @@ nav{
     z-index: 9;
     width: 100%;
 
-
 }
 
+
 .wrapper {
-    background-image: url("https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-image: url("https://images3.alphacoders.com/899/899393.jpg");
     background-size: cover;;
     background-repeat: no-repeat;
     height: 850px;
@@ -23,9 +23,11 @@ a   {
 }
 h2{
     color: darksalmon;
+    font-family: 'Quicksand', sans-serif;
 }
 p{
     color: darksalmon;
+    font-family: 'Quicksand', sans-serif;
 }
 
 input{
@@ -37,6 +39,6 @@ input{
     margin-top: 15px;
 }
 ::placeholder{
-    color: black;
-    font-style: italic;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
 }

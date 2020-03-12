@@ -59,4 +59,61 @@
 
         }
 
+        public function getAllUsers()
+        {
+            $this->db->query("SELECT `id`, `name`, `email`, `role`  FROM `customers`");
+            return $this->db->resultSet();
+        }
+
+        public function getUserById($id)
+        {
+            $this->db->query('SELECT * FROM customers WHERE id = :id');
+            $this->db->bind(':id', $id);
+
+            return $this->db->single();
+
+        }
+
+        public function updateUserArray($array)
+        {
+            $comma = ' ';
+            $id = $array['id'];
+            unset($array['id']);
+
+            if(count($array)>1){
+                $comma = ',';
+            }
+            $string = '';
+            foreach ($array as $key => $value){
+                $string .= ( '`' . $key . '`' .  ' = ' . '\'' . $value . '\'' . $comma);
+            }
+
+            $string = substr($string, 0, -1);
+
+            $this->db->query("UPDATE `customers` SET $string WHERE `id`= $id");
+
+            // Execute
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function deleteUserById($data){
+
+            $this->db->query('SELECT * FROM customers WHERE id = :id');
+
+            // Bind value
+
+            $this->db->bind(':id', $data['id']);
+
+            return $this->db->single();
+        }
+
+        public function getUserByRow()
+        {
+            $this->db->query("SELECT  `role`  FROM `customers`");
+            return $this->db->resultSet();
+        }
     }

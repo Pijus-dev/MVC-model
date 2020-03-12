@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<?= URLROOT; ?>/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?= URLROOT; ?>/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?= URLROOT; ?>/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <title><?= SITENAME; ?></title>
 </head>
 <body>

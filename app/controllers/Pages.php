@@ -146,6 +146,9 @@
                     if ($loggedInUser){
                         // Creat session
                         $this->createUserSession($loggedInUser);
+                        if($_SESSION['customers_role'] == 'admin'){
+                            redirect('admins/admins');
+                        }
                     }else{
                         $data['password_err'] = 'Password incorrect';
 
@@ -173,9 +176,29 @@
 
         public function createUserSession($user)
         {
-            $_SESSION['user_id'] = $user->id;
-            $_SESSION['user_email'] = $user->email;
-            $_SESSION['user_name'] = $user->name;
+            $_SESSION['customers_id'] = $user->id;
+            $_SESSION['customers_email'] = $user->email;
+            $_SESSION['customers_name'] = $user->name;
+            $_SESSION['customers_role'] = $user->role;
             redirect('infos/products');
         }
+
+        public function logout()
+        {
+            unset($_SESSION['customers_id']);
+            unset($_SESSION['customers_email']);
+            unset($_SESSION['customers_name']);
+            unset ($_SESSION['customers_role']);
+            session_destroy();
+            redirect('pages/login');
+        }
+
+//        public function isLoggedIn()
+//        {
+//            if (isset($_SESSION['customers_id'])){
+//                return true;
+//            }else{
+//                return false;
+//            }
+//        }
     }

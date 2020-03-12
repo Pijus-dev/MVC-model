@@ -1,0 +1,21 @@
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+.navbar{
+    background-image: linear-gradient(to right top, #c2854c, #c68c42, #c89436, #c79d28, #c3a717);
+}
+a{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;"
+}
+.h4, .h5{
+    font-family: 'Quicksand', sans-serif;
+}
+
+table{
+     font-family: 'Quicksand', sans-serif;
+    border-radius: 10px;
+ }
+
